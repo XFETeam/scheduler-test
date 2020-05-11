@@ -17,7 +17,12 @@ fs.writeFile("./.tmp/test.text", (new Date()).toString(), { flag: 'w' }, functio
       console.log(err);
     }
     console.log('commit success')
-  }).addRemote('origin', 'https://github.com/XFETeam/scheduler-test.git').push('origin', 'master', function () {
+  }).addRemote('origin', 'https://github.com/XFETeam/scheduler-test.git', function (err) {
+    if (err) {
+      console.log(err);
+    }
+    console.log('commit success')
+  }).push('origin', 'master', function () {
     if (err) {
       console.log(err);
     }
